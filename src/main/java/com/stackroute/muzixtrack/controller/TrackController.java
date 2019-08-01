@@ -31,12 +31,11 @@ public class TrackController {
     Track trackDetails=trackService.getById(id);
     return new ResponseEntity<>(trackDetails,HttpStatus.OK);
   }
- /* @GetMapping("track")
-  public ResponseEntity<?> getAllTracks(@PathVariable Track track){
-    Track allTracks=trackService.getAllTracks(track);
-
+ @GetMapping("track")
+  public ResponseEntity<?> getAllTracks(){
+   return new ResponseEntity<List<Track>>(trackService.getAllTracks(),HttpStatus.OK);
   }
-  @DeleteMapping("user/{id}")
+  /*@DeleteMapping("user/{id}")
   public ResponseEntity<?> deleteUserById(@PathVariable("id") int id) {
     List<Track> trackList = trackService.deleteTrackById(id);
     return new ResponseEntity<>(trackList,HttpStatus.OK);
